@@ -11,7 +11,6 @@ import {
   InteractionType,
 } from "discord.js";
 import dotenv from "dotenv";
-import express from "express"; // ✅ ajout pour keep-alive
 dotenv.config();
 
 const client = new Client({
@@ -267,8 +266,17 @@ client.on("interactionCreate", async (interaction) => {
 
 client.login(process.env.TOKEN);
 
-// --- Keep-alive pour Render + UptimeRobot ---
+// === Keep-alive pour Render + UptimeRobot ===
+import express from "express";
 const app = express();
-app.get("/", (req, res) => res.send("Bot actif sur Render."));
+
+app.get("/", (req, res) => {
+  res.status(200).send("Bot actif sur Render.");
+});
+
+app.use((req, res) => {
+  res.redirect("/");
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🌐 Keep-alive actif sur le port ${PORT}`));
