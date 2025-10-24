@@ -267,7 +267,8 @@ client.on("interactionCreate", async (interaction) => {
 
 client.login(process.env.TOKEN);
 
-// --- Keep-alive pour Railway + UptimeRobot ---
+// --- Keep-alive pour Render + UptimeRobot ---
 const app = express();
-app.get("/", (req, res) => res.send("Bot actif."));
-app.listen(3000, () => console.log("🌐 Keep-alive actif sur le port 3000"));
+app.get("/", (req, res) => res.send("Bot actif sur Render."));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🌐 Keep-alive actif sur le port ${PORT}`));
