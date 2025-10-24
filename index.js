@@ -10,6 +10,8 @@ import {
   TextInputStyle,
   InteractionType,
 } from "discord.js";
+import registerCommands from "./deploy-commands.js";
+await registerCommands();
 import dotenv from "dotenv";
 dotenv.config();
 
