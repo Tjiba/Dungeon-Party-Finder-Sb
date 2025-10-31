@@ -1,4 +1,4 @@
-# 🏰 Dungeon Party Finder — Discord Bot
+# OUTDATED DONT USE
 
 Bot Discord pour faciliter la recherche de groupes dans les donjons de Skyblock (Normal & Master).  
 Créé avec **discord.js v14** et compatible **Render / Replit / Railway**.
